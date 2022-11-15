@@ -1,47 +1,68 @@
-let monto;
-let interesAnual;
-let cantidadAnios;
-let montoTotal;
-let nombreIngresado;
-let apellidoIngresado;
-let emailIngresado;
-let edadIngresada;
+let productos = [
+    {
+        id: 001,
+        marca: "Jonhnnie Walker",
+        nombre: "Whisky Jonhnnie Walker Blue Label",
+        region: "Escocia",
+        precio: 58500  
+    },
 
-alert ("Bienvenidos a InverOne")
+    {
+        id: 002,
+        marca: "Jonhnnie Walker",
+        nombre: "Whisky Jonhnnie Walker Gold Label",
+        region: "Escocia",
+        precio: 14000  
+    },
 
-nombreIngresado = prompt ("Ingrese su Nombre");
+    {
+        id: 003,
+        marca: "Jonhnnie Walker",
+        nombre: "Whisky Jonhnnie Walker Black Label",
+        region: "Escocia",
+        precio: 10000  
+    },
 
-alert ("¡ Bienvenido al Centro de Inversiones InverOne" + " " + nombreIngresado + "!")
-console.log ("Su Nombre es:" + " " +nombreIngresado)
+    {
+        id: 004,
+        marca: "Jonhnnie Walker",
+        nombre: "Whisky Jonhnnie Walker Red Label",
+        region: "Escocia",
+        precio: 5000 
+    },
 
-apellidoIngresado = prompt ("Ingrese su Apellido")
-console.log ("Su Apellido es:" + " " +apellidoIngresado)
+    {
+        id: 005,
+        marca: "Jack Daniel´s",
+        nombre: "Whisky Jack Daniel´s Old",
+        region: "Estados Unidos",
+        precio: 12000  
+    },
 
+    {
+        id: 006,
+        marca: "Jack Daniel´s",
+        nombre: "Whisky Jack Daniel´s Tennessee Honey",
+        region: "Estados Unidos",
+        precio: 12000   
+    },
+]
 
-emailIngresado = prompt ("Ingrese su Email")
-console.log ("Su Email es:" + " " +emailIngresado)
+alert ("Bienvenidos a FullBeb")
+alert ("En nuestra plataforma podras informarte de nuestros productos y precios, para efectuar la compra deberas acercarte a nuestras sucursales")
 
-edadIngresada = parseInt(prompt("Ingrese su edad"))
-console.log (edadIngresada >18)
+productos.forEach((producto) => {
+    console.log(producto.marca, producto.nombre, producto.precio)
+})
 
-if (edadIngresada >=18) {
-    alert ("Usted es mayor de edad y responsable de cualquier accion a la que se comprometa")
-} else {
-    alert ("Usted es menor de Edad, por lo cual no podremos llegar a un acuerdo")
+buscadorPrincipal = prompt ("Buscar productos, marcas y ofertas...");
+console.log(buscadorPrincipal)
+
+let productoBuscado = productos.find(producto => producto.nombre === buscadorPrincipal)
+if (productoBuscado) {
+    console.log("El Precio de su producto seleccionado es:" + " " + productoBuscado.precio)
+}else {
+    alert ("Ingrese un producto correcto")
 }
 
-
-monto = parseInt(prompt("Ingrese monto de la inversion"))
-
-interesAnual = parseInt(prompt("Ingrese interes Anual de la Inversión"))
-
-cantidadAnios = parseInt(prompt("Ingrese cantidad de años a invertir"))
-montoTotal = monto
-
-
-for (let i = 0; i < cantidadAnios; i++) {
-    montoTotal = monto + montoTotal + interesAnual / 100
-    console.log("Total: ", montoTotal)
-}
-
-alert ("Te esperamos en nuestras Sucursales para concretar ... Saludos")
+alert ("Te esperamos en nuestras Sucursales para concretar la compra... Saludos")
