@@ -49,6 +49,7 @@ let productos = [
 ]
 
 alert ("Bienvenidos a FullBeb")
+
 alert ("En nuestra plataforma podras informarte de nuestros productos y precios, para efectuar la compra deberas acercarte a nuestras sucursales")
 
 productos.forEach((producto) => {
@@ -60,9 +61,11 @@ console.log(buscadorPrincipal)
 
 let productoBuscado = productos.find(producto => producto.nombre === buscadorPrincipal)
 if (productoBuscado) {
-    console.log("El Precio de su producto seleccionado es:" + " " + productoBuscado.precio)
+    alert("El Precio de su producto seleccionado es:" + " " + productoBuscado.precio)
 }else {
     alert ("Ingrese un producto correcto")
 }
 
 alert ("Te esperamos en nuestras Sucursales para concretar la compra... Saludos")
+
+alert ("Compras mayores a 30.000 pesos, Obtiene un cupon de descuento para la siguiente compra")
